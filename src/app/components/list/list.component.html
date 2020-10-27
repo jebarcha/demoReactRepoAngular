@@ -1,0 +1,11 @@
+
+<div id="msgNotFound" *ngIf="!searching && searchText.length > 0 && issues.length === 0" 
+     class="noissueItem">
+    {{ messageNotFound }}
+</div>
+
+<div *ngFor="let issue of issues"
+        class="issueItem">
+    <a [href]="issue.url" target="_blank">{{issue.title}}</a>
+</div>
+

@@ -1,11 +1,21 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ListComponent } from './components/list/list.component';
+import { RepoSearchComponent } from './components/repo-search/repo-search.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        ListComponent,
+        RepoSearchComponent
+      ],
+      imports: [
+        BrowserModule,
+        HttpClientModule
       ],
     }).compileComponents();
   }));
@@ -16,16 +26,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'demo'`, () => {
+  it(`should have as title 'Search github Repo React'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('demo');
+    expect(app.title).toEqual('Search github Repo React');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('demo app is running!');
-  });
 });
